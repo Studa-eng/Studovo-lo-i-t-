@@ -2,7 +2,15 @@ name: GitHub Actions Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
 jobs:
-  Explore-GitLab-Actions:
+  Job-A:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello, world!"
+      - run: echo "Hello, A!"
+  Job-B:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello, B!"
+  Job-C:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello, C!"
