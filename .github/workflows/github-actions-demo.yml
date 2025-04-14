@@ -8,13 +8,13 @@ jobs:
       - run: echo "Hello, A!"
   Job-B:
     needs:
-      - A
+      - Job-A
     runs-on: ubuntu-latest
     steps:
       - run: echo "Hello, B!"
   Job-C:
     needs:
-      - B
+      - Job-B
     runs-on: ubuntu-latest
     steps:
       - run: echo "Hello, C!"
