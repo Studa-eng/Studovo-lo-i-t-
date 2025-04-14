@@ -7,10 +7,14 @@ jobs:
     steps:
       - run: echo "Hello, A!"
   Job-B:
+    needs:
+      - A
     runs-on: ubuntu-latest
     steps:
       - run: echo "Hello, B!"
   Job-C:
+    needs:
+      - B
     runs-on: ubuntu-latest
     steps:
       - run: echo "Hello, C!"
