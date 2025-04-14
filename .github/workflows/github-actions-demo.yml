@@ -18,3 +18,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Hello, C!"
+  Job-D:
+    needs:
+      - Job-B
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello, C!"
+  Job-E:
+    needs:
+      - Job-B
+      - Job-A
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello, C!"
+  Job-F:
+    needs:
+      - Job-B
+      - Job-A
+      - Job-E
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello, C!"
