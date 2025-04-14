@@ -26,7 +26,7 @@ jobs1:
       - name: ✅ Test 2 – Prázdný vstup
         run: |
           echo "Tady by se spustil test pro prázdný vstup"
-          jobs2:
+  jobs2:        
   test:
     runs-on: ubuntu-latest
 
