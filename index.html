@@ -2,3 +2,45 @@
 Vítej na mém webu!
 Tady bude víc věcí... zatím testuju 
 přidán index.html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hádej číslo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎯 Hádej číslo mezi 1 a 100</h1>
+  <input type="number" id="guess" placeholder="Tvůj tip">
+  <button onclick="checkGuess()">Odeslat</button>
+  <p id="result"></p>
+
+  <script>
+    const secretNumber = Math.floor(Math.random() * 100) + 1;
+
+    function checkGuess() {
+      const guess = parseInt(document.getElementById("guess").value);
+      const result = document.getElementById("result");
+
+      if (isNaN(guess)) {
+        result.textContent = "Zadej platné číslo!";
+      } else if (guess < secretNumber) {
+        result.textContent = "Příliš nízko!";
+      } else if (guess > secretNumber) {
+        result.textContent = "Příliš vysoko!";
+      } else {
+        result.textContent = "🔥 Správně! Uhodl jsi číslo!";
+      }
+    }
+  </script>
+</body>
+</html>
