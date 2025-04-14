@@ -1,0 +1,60 @@
+.header {
+    background: rgb(51, 122, 183);
+    background: linear-gradient(27deg, rgba(51, 122, 183, 1) 0%, rgba(117, 195, 4, 0) 100%);
+    height: 8vh;
+    min-height: 6vh;
+}
+
+.page {
+    height: 100vh;
+}
+
+.content {
+    margin-top: 8%;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+
+iframe {
+    width: 100%;
+    height: 65vh;
+    border: none;
+}
+
+/* Set gray background color and 100% height */
+.sidenav {
+    background-color: #f1f1f1;
+    height: 86vh;
+    overflow-y: auto;
+}
+
+/* Set black background color, white text and some padding */
+.footer {
+    background-color: #555;
+    color: white;
+    padding-top: 20px;
+    padding-left: 30px;
+    height: 6vh;
+}
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+    .sidenav {
+        height: auto;
+        padding: 15px;
+    }
+
+    .row.content {
+        height: auto;
+    }
+}
+.table {
+    font-size: x-large;
+}
+.img1 {
+    height: 50px;
+    width: 50px;
+}
