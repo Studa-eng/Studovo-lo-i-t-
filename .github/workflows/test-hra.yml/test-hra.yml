@@ -5,7 +5,32 @@ on:
     paths:
       - 'index.html'
 
-jobs:
+jobs1:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🔄 Naklonuj repozitář
+        uses: actions/checkout@v2
+
+      - name: 💻 Nainstaluj Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: 📦 Nainstaluj Puppeteer
+        run: |
+          npm init -y
+          npm install puppeteer
+
+      - name: ✅ Test 1 – Zobraz výsledek pro číslo 50
+        run: |
+          echo "Tady by se spustil test s číslem 50"
+
+      - name: ✅ Test 2 – Prázdný vstup
+        run: |
+          echo "Tady by se spustil test pro prázdný vstup"
+          jobs2:
   test:
     runs-on: ubuntu-latest
 
