@@ -1,0 +1,49 @@
+name: Test Hádací hry
+
+on:
+  push:
+    paths:
+      - 'index.html'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Naklonuj repozitář
+        uses: actions/checkout@v2
+
+      - name: Nainstaluj Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Nainstaluj Puppeteer
+        run: |
+          npm init -y
+          npm install puppeteer
+
+      - name: Přidej testovací soubor
+        run: |
+          echo "const puppeteer = require('puppeteer');
+
+          (async () => {
+            const browser = await puppeteer.launch({ headless: 'new' });
+            const page = await browser.newPage();
+
+            await page.goto('https://studa-eng.github.io/Studovo-lo-it-/');
+
+            await page.type('#guess', '50');
+            await page.click('button');
+
+            await page.waitForSelector('#result');
+            const resultText = await page.$eval('#result', el => el.textContent);
+
+            console.log('🎮 Výsledek hry: ' + resultText);
+            if (!resultText) throw new Error('Žádný výsledek se nezobrazil!');
+
+            await browser.close();
+          })();" > test.js
+
+      - name: Spusť test
+        run: node test.js
