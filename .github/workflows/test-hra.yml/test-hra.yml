@@ -1,9 +1,5 @@
 name: Test Hádací hry
 
-on:
-  push:
-    paths:
-      - 'index.html'
 
 jobs1:
   test:
